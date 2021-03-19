@@ -1,27 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
-import fakeData from './fakeData/data.json'
-import { useEffect, useState } from 'react';
-function App() {
-  const [rides, setRide] = useState([]);
+import React, { createContext, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home';
+import Search from './Components/Search/Search';
+import SearchResult from './Components/SearchResult/SearchResult';
 
-  useEffect(() => {
-    fetch('https://api.mocki.io/v1/fba57c80')
-  .then(res => res.json())
-  .then(data => setRide(data))
-  }, [])
 
+
+export const UserContext = createContext();
+
+const App = () => {
+  const [ridersInfo, setRidersInfo] = useState([]);
   return (
-    <div>
+    <UserContext.Provider value={[ridersInfo, setRidersInfo]}>
+      
+      <Router>
       {
-        rides.map(ride => (<div style={{backgroundColor:'blue'}}><p>{ride.name}</p> <img src={ride.photo} alt="img"/> 
-        <img src="https://ibb.co/YfHdLHq" alt="img"/>
-        
-        </div>)
-        )
+        console.log("Dipra",ridersInfo)
       }
-    </div>
+        <Header></Header>
+        <Switch>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/search">
+            <Search></Search>
+          </Route>
+          <Router path="/result">
+            <SearchResult></SearchResult>
+          </Router>
+          <Route path="/">
+            <Home></Home>
+          </Route>
+        </Switch>
+      </Router> </UserContext.Provider>
+
   );
-}
+};
 
 export default App;

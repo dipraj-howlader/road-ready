@@ -1,0 +1,17 @@
+.core-ui{
+    background-color: wheat;
+    padding: 5px;
+    margin: 10px;
+    height: 250px;
+    width: 250px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.core-ui img{
+    width: 250px;
+}
+.core-ui:hover{
+    background-color: yellowgreen;
+    color: white;
+    text-shadow: gray 1px 1px 5px;
+}
