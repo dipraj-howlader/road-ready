@@ -1,0 +1,4 @@
+[{"id":1,"name":"BIKE","photo":"https://ibb.co/XYVmhdm","cost":30,"people":1},
+{"id":2,"name":"CAR","photo":"https://ibb.co/MZWcFvs","cost":50,"people":2},
+{"id":3,"name":"BUS","photo":"https://ibb.co/YfHdLHq","cost":150,"people":8},
+{"id":4,"name":"TRAIN","photo":"https://ibb.co/p1tYrn1","cost":500,"people":15}]
