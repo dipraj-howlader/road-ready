@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PriveteRoute/PrivateRoute';
 import Search from './Components/Search/Search';
 import SearchResult from './Components/SearchResult/SearchResult';
 
@@ -15,30 +17,32 @@ import SearchResult from './Components/SearchResult/SearchResult';
 export const UserContext = createContext();
 
 const App = () => {
-  const [ridersInfo, setRidersInfo] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState({});
+  
   return (
-    <UserContext.Provider value={[ridersInfo, setRidersInfo]}>
-      
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <p>name : {loggedInUser.displayName}</p>
       <Router>
-      {
-        console.log("Dipra",ridersInfo)
-      }
         <Header></Header>
         <Switch>
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/search">
+          <PrivateRoute path="/search">
             <Search></Search>
-          </Route>
-          <Router path="/result">
+          </PrivateRoute>
+          <PrivateRoute path="/result">
             <SearchResult></SearchResult>
-          </Router>
+          </PrivateRoute>
+          <Route path="/login">
+          <Login></Login>
+          </Route>
           <Route path="/">
             <Home></Home>
           </Route>
         </Switch>
-      </Router> </UserContext.Provider>
+      </Router>
+       </UserContext.Provider>
 
   );
 };

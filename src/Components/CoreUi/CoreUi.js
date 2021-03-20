@@ -10,8 +10,9 @@ const CoreUi = (props) => {
     
     const { name, photo, cost, prople, id } = props.rider;
     const handleSearchPage = () => {
-        history.push("/search")
+        history.push("/search");
         history.push(id);
+        
     }
     return (
         <div className="core-ui" onClick={handleSearchPage}>
