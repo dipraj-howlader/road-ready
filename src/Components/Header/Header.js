@@ -7,23 +7,24 @@ import './Header.css'
 const Header = () => {
     const history = useHistory();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    let userName ='';
     const handleLogIn =()=> {
         history.push("/login");
-        userName=loggedInUser.displayName;
-
     }
     return (
         <div className="header">
+            {
+                console.log(loggedInUser)
+            }
             <Box height flexGrow={0.9}><h1>Road-Ready</h1></Box>
             <Box>
-                <nav>
+                <nav style={{display:'flex'}}>
                     <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/home">Home</Link>
                     <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/destination">Destination</Link>
                     <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/blog">Blog</Link>
                     <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/contact">Contact</Link>
-                    { loggedInUser.displayName===userName ? <p>{loggedInUser.displayName}</p> : 
-        <Button onClick={handleLogIn} variant="contained" color="primary">Sign In</Button>}
+                    { loggedInUser.isSignedIn? <p style={{ textDecoration: 'none', padding: '8px', color: 'black' }}>{loggedInUser.name}</p> : <Button onClick={handleLogIn} variant="contained" color="primary">Log In</Button>
+                    
+                    }
 
                 </nav>
             </Box>

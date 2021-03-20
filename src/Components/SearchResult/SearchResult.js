@@ -1,12 +1,22 @@
 import React, { useContext } from 'react';
-
+import fakeData from '../../fakeData/data.json';
+import Ridecost from '../RideCost/Ridecost';
+import img from '../../photo/Map.png'
+import './SearchResult.css';
 const SearchResult = () => {
 
 
     return (
         
-        <div>
-            <h1>This is search result</h1>
+        <div className="search">
+            <div>
+            {
+                fakeData.map(ride => <Ridecost ride={ride}> </Ridecost>)
+            }
+            </div>
+            <div>
+                <img src={img} alt=""/>
+            </div>
         </div>
     );
 };

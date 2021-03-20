@@ -23,7 +23,7 @@
   color: black;
 }
 
-input:focus {
+.contact-us input:focus {
   border-bottom: 5px solid #ffa580;
 }
 
@@ -38,7 +38,7 @@ input:focus {
   outline: none;
   border: 1px solid black;
 }
-button:hover {
+.contact-us button:hover {
   background: black;
   color: white;
   border: 1px solid black;

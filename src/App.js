@@ -17,11 +17,16 @@ import SearchResult from './Components/SearchResult/SearchResult';
 export const UserContext = createContext();
 
 const App = () => {
-  const [loggedInUser, setLoggedInUser] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState({
+    isSignedIn: false,
+    name: '',
+    email: '',
+    password: '',
+    success:''
+  });
   
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <p>name : {loggedInUser.displayName}</p>
       <Router>
         <Header></Header>
         <Switch>
