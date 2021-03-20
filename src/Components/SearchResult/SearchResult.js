@@ -3,6 +3,7 @@ import fakeData from '../../fakeData/data.json';
 import Ridecost from '../RideCost/Ridecost';
 import img from '../../photo/Map.png'
 import './SearchResult.css';
+import { SimpleMap } from '../GoogleMap/SimpleMap';
 const SearchResult = () => {
 
 
@@ -15,7 +16,7 @@ const SearchResult = () => {
             }
             </div>
             <div>
-                <img src={img} alt=""/>
+                <SimpleMap></SimpleMap>
             </div>
         </div>
     );
