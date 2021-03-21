@@ -16,7 +16,7 @@ const Header = () => {
             <Box>
                 <nav style={{display:'flex'}}>
                     <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/home">Home</Link>
-                    <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/destination">Destination</Link>
+                    <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/search/1">Destination</Link>
                     <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/blog">Blog</Link>
                     <Link style={{ textDecoration: 'none', padding: '8px', color: 'black' }} to="/contact">Contact</Link>
                     { loggedInUser.isSignedIn? <p style={{ textDecoration: 'none', padding: '8px', color: 'black' }}>{loggedInUser.name}</p> : <Button onClick={handleLogIn} variant="contained" color="primary">Log In</Button>
