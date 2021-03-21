@@ -1,13 +1,46 @@
-.search{
-    display: flex;
+@media (min-width:320px){
+    .search{
+        display: flex;
+       
+    }
+    .des-info{
+        background-color: white;
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 50px;
+        margin: 20px;
+        box-shadow: gray 1px 1px 5px;
+    }
+
 }
+@media (min-width:641px){
+    .search{
+        display: flex;
+       
+    }
+    .des-info{
+        background-color: white;
+        margin: 20px;
+        margin-left: 100px;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        height: 450px;
+        box-shadow: gray 1px 1px 5px;
+    }
+
+}
+
+
 .destination{
     display: grid;
-    margin: 50px;
+    margin-left: 10px;
     background-color: cadetblue;
     padding: 10px;
     height: 120px;
     width: 250px;
     border-radius: 10px;
     text-align: left;
+    margin-bottom: 30px;
+    box-shadow: rgb(148, 143, 143) 1px 1px 5px;
 }

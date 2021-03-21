@@ -1,6 +1,28 @@
-.ridecost{
-    display: flex;
+
+.ridecost .first-img img{
+    width: 50px;
+    height: 45px;
+    padding: 5px;
+    margin: 10px;
 }
-.ridecost img{
-    width: 25px;
+.ridecost .snd-img img{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 3px;
+}
+.ride-info{
+ display: flex;
+ background-color:#3D9970 ;
+ margin: 10px;
+ height: 75px;
+ width: 250px;  
+ padding: 10px;
+ border-radius: 10px;
+ align-items: center;
+justify-content: space-evenly;
+text-align:start;
+white-space: pre-line;
+box-shadow: gray 1px 1px 10px;
+  
 }

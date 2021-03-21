@@ -1,8 +1,25 @@
-.home{
-    background-color: #3D9970;
-    height: 600px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+@media (min-width:320px){
+    .home{
+        background-color: #3D9970;
+        padding-bottom: 20px;
+        display: grid;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }  
+}
+
+
+
+
+@media (min-width:641px){
+    .home{
+        background-color: #3D9970;
+        padding-bottom: 200px;
+        padding-top: 100px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    } 
 }
