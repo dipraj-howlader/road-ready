@@ -36,9 +36,9 @@ const App = () => {
           <PrivateRoute path="/search/:id">
             <Search></Search>
           </PrivateRoute>
-          <Route path="/result/:id">
+          <PrivateRoute path="/result/:id">
             <SearchResult></SearchResult>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
           <Login></Login>
           </Route>

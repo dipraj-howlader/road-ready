@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
+import React, { useEffect, useState } from 'react';
 import CoreUi from '../CoreUi/CoreUi';
 import './Home.css'
 

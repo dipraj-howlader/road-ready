@@ -13,7 +13,7 @@ if (firebase.apps.length === 0) {
 }
 const Login = () => {
 
-   
+
 
     const [newUser, setNewUser] = useState(false);
     const history = useHistory();
@@ -80,12 +80,12 @@ const Login = () => {
                 .then(res => {
                     const newUserInfo = { ...loggedInUser };
                     newUserInfo.success = true;
-                    newUserInfo.isSignedIn= true;
+                    newUserInfo.isSignedIn = true;
                     newUserInfo.name = loggedInUser.name;
                     newUserInfo.error = '';
                     setLoggedInUser(newUserInfo);
                     updateUserName(loggedInUser.name);
-                history.replace(from);
+                    history.replace(from);
                 })
                 .catch((error) => {
                     const newUserInfo = { ...loggedInUser };
@@ -104,8 +104,7 @@ const Login = () => {
                 .then(res => {
                     const newUserInfo = { ...loggedInUser };
                     newUserInfo.success = true;
-                    newUserInfo.isSignedIn= true;
-                    
+                    newUserInfo.isSignedIn = true;
                     newUserInfo.error = '';
                     setLoggedInUser(newUserInfo);
                     history.replace(from);
@@ -135,44 +134,55 @@ const Login = () => {
     }
 
     return (
-        <div style={{backgroundColor:'black',
-        textAlign:'center',
-        justifyContent:'center',
-        alignItems:'center',
-        color:'white',
-        paddingBottom:'120px',
-        paddingTop:'60px',
-        fontFamily:'CourierNew'
-        
-        } }>
+        <div style={{
+            backgroundColor: 'black',
+            textAlign: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            color: 'white',
+            paddingBottom: '120px',
+            paddingTop: '60px',
+            fontFamily: 'CourierNew'
+
+        }}>
             <div>
-                {newUser ? <h1>Create an Account</h1> : <h1>Log In</h1> }
+                {newUser ? <h1>Create an Account</h1> : <h1>Log In</h1>}
                 {
                     loggedInUser.success && <p style={{ color: 'white' }}> User {newUser ? 'created' : 'Logged In'} Successfully </p>
                 }
                 <form onSubmit={handleSubmit} >
-                    {newUser && <input style={{width:'300px',height:'35px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="text" name="name" onBlur={handleChange} placeholder="Name" />
+                    {newUser && <input style={{ width: '300px', height: '35px', border: '1px solid whitesmoke', borderRadius: '5px', padding: '5px', margin: '8px' }} type="text" name="name" onBlur={handleChange} placeholder="Name" />
                     }
                     <br />
-                    <input style={{width:'300px',height:'35px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="text" name="email" onBlur={handleChange} placeholder="Email" required />
+                    <input style={{ width: '300px', height: '35px', border: '1px solid whitesmoke', borderRadius: '5px', padding: '5px', margin: '8px' }} type="text" name="email" onBlur={handleChange} placeholder="Email" required />
                     <br />
-                    <input style={{width:'300px',height:'35px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="password" onBlur={handleChange} name="password" placeholder="Password" required />
+                    <input style={{ width: '300px', height: '35px', border: '1px solid whitesmoke', borderRadius: '5px', padding: '5px', margin: '8px' }} type="password" onBlur={handleChange} name="password" placeholder="Password" required />
                     <br />
-                    <input style={{width:'300px',height:'40px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px',textAlign:'center'}} type="submit" value={newUser ? 'Sign Up' : 'Log In'} />
+                    <input style={{ width: '300px', height: '40px', border: '1px solid whitesmoke', borderRadius: '5px', padding: '5px', margin: '8px', textAlign: 'center' }} type="submit" value={newUser ? 'Sign Up' : 'Log In'} />
                 </form>
                 <p>Don't have any Account?</p>
                 <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
                 <label htmlFor="newUser"><small>Sing Up</small> </label>
                 <p style={{ color: 'white' }}>{loggedInUser.error}</p>
-                
+
 
 
             </div>
             <div>
-                <p style={{color:'blue'}}>---------or---------</p>
+                <p style={{ color: 'blue' }}>---------or---------</p>
                 <Button onClick={handleGoogleSingIn} variant="outlined" color="primary">
-                Continue with Google
+                    Continue with Google
 </Button>
+            </div>
+            <div style={{marginTop:'50px'}}>
+                <footer>
+                    <p>
+                        <small>
+                          Developed by Dipraj  
+                        </small>
+                        
+                    </p>
+                </footer>
             </div>
         </div>
     );
