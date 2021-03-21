@@ -1,3 +1,13 @@
 .search{
     display: flex;
 }
+.destination{
+    display: grid;
+    margin: 50px;
+    background-color: cadetblue;
+    padding: 10px;
+    height: 120px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: left;
+}

@@ -11,7 +11,7 @@ import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PriveteRoute/PrivateRoute';
 import Search from './Components/Search/Search';
 import SearchResult from './Components/SearchResult/SearchResult';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export const UserContext = createContext();
@@ -33,12 +33,12 @@ const App = () => {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/search">
+          <PrivateRoute path="/search/:id">
             <Search></Search>
           </PrivateRoute>
-          <PrivateRoute path="/result">
+          <Route path="/result/:id">
             <SearchResult></SearchResult>
-          </PrivateRoute>
+          </Route>
           <Route path="/login">
           <Login></Login>
           </Route>

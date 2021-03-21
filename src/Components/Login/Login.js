@@ -18,7 +18,7 @@ const Login = () => {
     const [newUser, setNewUser] = useState(false);
     const history = useHistory();
     const location = useLocation();
-    const { from } = location.state || { from: { pathname: "/search" } };
+    const { from } = location.state || { from: { pathname: "/search/1" } };
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
@@ -141,7 +141,7 @@ const Login = () => {
         alignItems:'center',
         color:'white',
         paddingBottom:'120px',
-        paddingTop:'150px',
+        paddingTop:'60px',
         fontFamily:'CourierNew'
         
         } }>
@@ -151,14 +151,14 @@ const Login = () => {
                     loggedInUser.success && <p style={{ color: 'white' }}> User {newUser ? 'created' : 'Logged In'} Successfully </p>
                 }
                 <form onSubmit={handleSubmit} >
-                    {newUser && <input style={{width:'250px',height:'25px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="text" name="name" onBlur={handleChange} placeholder="Name" />
+                    {newUser && <input style={{width:'300px',height:'35px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="text" name="name" onBlur={handleChange} placeholder="Name" />
                     }
                     <br />
-                    <input style={{width:'250px',height:'25px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="text" name="email" onBlur={handleChange} placeholder="Email" required />
+                    <input style={{width:'300px',height:'35px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="text" name="email" onBlur={handleChange} placeholder="Email" required />
                     <br />
-                    <input style={{width:'250px',height:'25px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="password" onBlur={handleChange} name="password" placeholder="Password" required />
+                    <input style={{width:'300px',height:'35px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="password" onBlur={handleChange} name="password" placeholder="Password" required />
                     <br />
-                    <input style={{width:'250px',height:'25px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px'}} type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
+                    <input style={{width:'300px',height:'40px', border:'1px solid whitesmoke', borderRadius:'5px', padding:'5px',margin:'8px',textAlign:'center'}} type="submit" value={newUser ? 'Sign Up' : 'Log In'} />
                 </form>
                 <p>Don't have any Account?</p>
                 <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
@@ -169,7 +169,7 @@ const Login = () => {
 
             </div>
             <div>
-                <br/>
+                <p style={{color:'blue'}}>---------or---------</p>
                 <Button onClick={handleGoogleSingIn} variant="outlined" color="primary">
                 Continue with Google
 </Button>

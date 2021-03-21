@@ -1,16 +1,14 @@
 import React from 'react';
-import './Ridecose.css'
+import './Ridecose.css';
+import fakeData from '../../fakeData/data.json';
+import { useParams } from 'react-router';
 
 const Ridecost = (props) => {
-    const { name, photo, cost, people, id } = props.ride;
+    const {id } =useParams();
+    const { name, photo, cost, people } = fakeData[id-1]
     return (
         <div className="ridecost">
-            <img src={photo} alt=""/>
-            <p>{name}</p>
-            <p>{people}</p>
-            <p> $ {cost}</p>
-
-
+            <h6>{name}</h6>
         </div>
     );
 };

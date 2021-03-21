@@ -12,9 +12,6 @@ const Header = () => {
     }
     return (
         <div className="header">
-            {
-                console.log(loggedInUser)
-            }
             <Box height flexGrow={0.9}><h1>Road-Ready</h1></Box>
             <Box>
                 <nav style={{display:'flex'}}>

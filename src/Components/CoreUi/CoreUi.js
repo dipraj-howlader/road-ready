@@ -1,17 +1,13 @@
-
-import { Grid, Link, Paper } from '@material-ui/core';
 import React from 'react';
-import { Route, Router, useHistory } from 'react-router';
-import Search from '../Search/Search';
+import { useHistory } from 'react-router';
 import './CoreUi.css';
 
 const CoreUi = (props) => {
     const history = useHistory();
     
-    const { name, photo, cost, prople, id } = props.rider;
+    const { name, photo, id } = props.rider;
     const handleSearchPage = () => {
-        history.push("/search");
-        history.push(id);
+        history.push(`/search/${id}`);
         
     }
     return (
